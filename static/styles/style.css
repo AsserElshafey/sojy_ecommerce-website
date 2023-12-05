@@ -496,6 +496,30 @@ footer .copyright{
     line-height: 25px;
 }
 
+/* about page */
+
+#page-header.about-header{
+    background-image: url(../imgs/about/about-banner.jpg);
+}
+
+.about-header h2{
+    color: white;
+}
+
+#about-head{
+    display: flex;
+    align-items: center;
+}
+
+#about-head img{
+    width: 50%;
+    height: auto;
+}
+
+#about-head div{
+    margin-left: 40px;
+}
+
 /* media Query */
 
 @media (max-width:1100px){
@@ -632,6 +656,21 @@ footer .copyright{
 
     #prodetails .single-pro-details{
         width: 100%;
+    }
+
+    /* about page */
+
+    #about-head{
+        flex-direction: column;
+    }
+
+    #about-head img{
+        width: 100%;
+    }
+
+    #about-head div{
+        margin-left: 0;
+        margin-top: 35px;
     }
 }
 
