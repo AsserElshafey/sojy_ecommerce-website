@@ -496,6 +496,88 @@ footer .copyright{
     line-height: 25px;
 }
 
+/* about page */
+
+#page-header.about-header{
+    background-image: url(../imgs/about/about-banner.jpg);
+}
+
+.about-header h2{
+    color: white;
+}
+
+#about-head{
+    display: flex;
+    align-items: center;
+}
+
+#about-head img{
+    width: 50%;
+    height: auto;
+}
+
+#about-head div{
+    margin-left: 40px;
+}
+
+/* contact-us page */
+
+#page-header.contact-us-header{
+    background-image: url(../imgs/contact/contact-us.jpg);
+}
+
+.contact-us-header h2{
+    color: white;
+}
+
+#contact-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact-details .details{
+    width: 40%;
+}
+
+#contact-details .details span{
+    font-size: 12px;
+    color: #E48F45;
+    font-weight: 700;
+}
+
+#contact-details .details h2{
+    font-size: 26px;
+    line-height: 35px;
+    padding: 20px 0px;
+}
+
+#contact-details .details li{
+    list-style: none;
+    display: flex;
+    padding: 10px 0;
+}
+
+#contact-details .details li i{
+    font-size: 14px;
+    padding-right: 22px;
+}
+
+#contact-details .details li p{
+    margin: 0;
+    font-size: 14px;
+}
+
+#contact-details .map{
+    width: 55%;
+    height: 400px;
+}
+
+#contact-details .map iframe{
+    width: 100%;
+    height: 100%;
+}
+
 /* media Query */
 
 @media (max-width:1100px){
@@ -631,6 +713,36 @@ footer .copyright{
     }
 
     #prodetails .single-pro-details{
+        width: 100%;
+    }
+
+    /* about page */
+
+    #about-head{
+        flex-direction: column;
+    }
+
+    #about-head img{
+        width: 100%;
+    }
+
+    #about-head div{
+        margin-left: 0;
+        margin-top: 35px;
+    }
+
+    /* contact-us page */
+
+    #contact-details{
+        flex-direction: column;
+    }
+
+    #contact-details .details{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #contact-details .map{
         width: 100%;
     }
 }
