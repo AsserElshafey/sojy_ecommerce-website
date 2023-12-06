@@ -12,4 +12,5 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(150), nullable=False)
     quantity = db.Column(db.Integer)
-    product_details = db.Column(db.String(512))
+    price = db.Column(db.Integer, nullable=False)
+    details = db.Column(db.String(512))
