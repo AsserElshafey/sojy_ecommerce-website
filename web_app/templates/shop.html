@@ -11,7 +11,7 @@
       <li><a href="{{url_for('views.home')}}">Home</a></li>
       <li><a class="active" href="shop.html">Shop</a></li>
       <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="{{ url_for('views.about')}}">About</a></li>
       <li><a href="contact.html">Contact Us</a></li>
       <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
       <li><a href="{{ url_for('auth.login')}}" style="padding-left: 10px;">Log In</a></li>

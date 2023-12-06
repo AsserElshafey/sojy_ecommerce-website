@@ -11,3 +11,8 @@ def home():
 @views.route("/shop", strict_slashes=False)
 def shop():
     return render_template('shop.html')
+
+
+@views.route("/about", strict_slashes=False)
+def about():
+    return render_template('about.html')
