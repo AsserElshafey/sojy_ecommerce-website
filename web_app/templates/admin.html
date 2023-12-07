@@ -48,26 +48,15 @@
                 </tr>
             </thead>
             <tbody>
+                {% for product in products %}
                 <tr>
-                    <td>Product 1</td>
-                    <td>10</td>
-                    <td>$100</td>
-                    <td>Details 1</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>${{ product.price }}</td>
+                    <td>{{ product.details }}</td>
                     <td><button type="button" class="btn btn-danger">Remove</button></td>
                 </tr>
-                <tr>
-                    <td>Product 2</td>
-                    <td>20</td>
-                    <td>$200</td>
-                    <td>Details 2</td>
-                    <td><button type="button" class="btn btn-danger">Remove</button></td>
-                </tr>
-                <tr>
-                    <td>Product 3</td>
-                    <td>30</td>
-                    <td>$300</td>
-                    <td>Details 3</td>
-                    <td><button type="button" class="btn btn-danger">Remove</button></td>
+                {% endfor %}
                 </tr>
             </tbody>
         </table>

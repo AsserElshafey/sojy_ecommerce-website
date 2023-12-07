@@ -7,7 +7,7 @@ product = Blueprint('product', __name__)
 
 
 @product.route('/admin', strict_slashes=False, methods=['GET', 'POST'])
-def add_product():
+def admin():
     if request.method == 'POST':
         name = request.form.get('product_name')
         quantity = request.form.get('product_quantity')
@@ -18,8 +18,5 @@ def add_product():
         db.session.add(new_product)
         db.session.commit()
         print("New product added")
-        print(name)
-        print(quantity)
-        print(price)
-        print(details)
-    return render_template('admin.html')
+    products = Product.query.all()
+    return render_template('admin.html', products=products)
