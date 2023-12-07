@@ -10,7 +10,7 @@
       <li><a class="active" href="{{url_for('views.home')}}">Home</a></li>
       <li><a href="{{ url_for('views.shop')}}">Shop</a></li>
       <li><a href="{{ url_for('views.about')}}">About</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="{{ url_for('views.contact_us')}}">Contact Us</a></li>
       <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
       <li><a href="{{ url_for('auth.login')}}" style="padding-left: 10px;">Login</a></li>
       <li><a href="{{ url_for('auth.logout')}}" style="padding-left: 10px;">Logout</a></li>
