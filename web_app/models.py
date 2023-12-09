@@ -14,3 +14,4 @@ class Product(db.Model):
     quantity = db.Column(db.Integer)
     price = db.Column(db.Integer, nullable=False)
     details = db.Column(db.String(512))
+    featured = db.Column(db.Integer)
