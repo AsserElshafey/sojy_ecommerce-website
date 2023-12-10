@@ -68,6 +68,16 @@ button.white{
     transition: 0.4s ease;
 }
 
+.btn{
+    background-color: #E48F45;
+    color: white;
+}
+
+.btn:hover{
+    background-color: #ffae67;
+    color: #1a1a1a;
+}
+
 body{
     width: 100%;
 }

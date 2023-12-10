@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Sojy</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <section id="header">
+      <a href="#"
+        ><img
+          src="imgs/logo.jpg"
+          class="logo"
+          width="50px"
+          height="55px"
+          alt=""
+      /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="contact.html">Contact Us</a></li>
+          <li id="lg-bag">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <li><a href="login.html" style="padding-left: 10px">Log In</a></li>
+          <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <!-- main content -->
+    <div class="container" style="margin-top: 40px">
+      <div class="row">
+        <div class="col-md-8 mb-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Biling details</h5>
+            </div>
+            <div class="card-body">
+              <form>
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form7Example1"
+                        class="form-control"
+                        placeholder="Examle: Ahmed"
+                      />
+                      <label class="form-label" for="form7Example1"
+                        >First name</label
+                      >
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input
+                        type="text"
+                        id="form7Example2"
+                        class="form-control"
+                        placeholder="Examle: Mohamed"
+                      />
+                      <label class="form-label" for="form7Example2"
+                        >Last name</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="email"
+                    id="form7Example5"
+                    class="form-control"
+                    placeholder="Examle: name@example.com"
+                  />
+                  <label class="form-label" for="form7Example5">Email</label>
+                </div>
+
+                <!-- Number input -->
+                <div class="form-outline mb-4">
+                  <input
+                    type="tel"
+                    id="form7Example6"
+                    class="form-control"
+                    placeholder="Examle: +20123456789"
+                  />
+                  <label class="form-label" for="form7Example6">Phone</label>
+                </div>
+
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form7Example4" class="form-control" />
+                  <label class="form-label" for="form7Example4">Address</label>
+                </div>
+
+                <!-- Message input -->
+                <div class="form-outline mb-4">
+                  <textarea
+                    class="form-control"
+                    id="form7Example7"
+                    rows="4"
+                  ></textarea>
+                  <label class="form-label" for="form7Example7"
+                    >Additional Delivery information</label
+                  >
+                </div>
+
+                <!-- Checkbox -->
+                <div class="form-check d-flex justify-content-center mb-2">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="form7Example8"
+                    checked
+                  />
+                  <label class="form-check-label" for="form7Example8">
+                    Agree On Terms & Conditions.
+                  </label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Summary</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0"
+                >
+                  Products
+                  <span>$53.98</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center px-0"
+                >
+                  Shipping
+                  <span>Gratis</span>
+                </li>
+                <li
+                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3"
+                >
+                  <div>
+                    <strong>Total amount</strong>
+                    <strong>
+                      <p class="mb-0">(including VAT)</p>
+                    </strong>
+                  </div>
+                  <span><strong>$53.98</strong></span>
+                </li>
+              </ul>
+
+              <button type="button" class="btn btn-lg btn-block">
+                Make purchase
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer  -->
+    <hr />
+    <footer class="section-p1">
+      <div class="cols">
+        <img
+          class="logo"
+          src="imgs/logo.jpg"
+          width="50px"
+          height="55px"
+          alt=""
+        />
+        <h4>Contact</h4>
+        <p>
+          <strong>Address:</strong> Lorem ipsum dolor sit amet consectetur
+          adipisicing elit.
+        </p>
+        <p><strong>Phone:</strong> +123456789</p>
+        <p><strong>Email:</strong> Example@Example.com</p>
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cols">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="cols">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="cols payment">
+        <h4>Payment methodes</h4>
+        <p>Secured Payment Gateways</p>
+        <img src="imgs/payment.png" height="50px" alt="" />
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2023, All rights reserved</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>
