@@ -5,16 +5,16 @@
 {% block content %}
 <!-- navbar -->
 <section id="header">
-  <a href="#"><img src="../static/imgs/logo.jpg" class="logo" width="50px" height="55px" alt=""></a>
+  <a href="#"><img src="../static/imgs/logo.png" class="logo" width="50px" height="55px" alt=""></a>
   <div>
     <ul id="navbar">
       <li><a href="{{url_for('views.home')}}">Home</a></li>
       <li><a class="active" href="shop.html">Shop</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="{{ url_for('views.about')}}">About</a></li>
+      <li><a href="{{ url_for('views.contact_us')}}">Contact Us</a></li>
       <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
-      <li><a href="{{ url_for('auth.login')}}" style="padding-left: 10px;">Log In</a></li>
+      <li><a href="{{ url_for('auth.login')}}" style="padding-left: 10px;">Login</a></li>
+      <li><a href="{{ url_for('auth.logout')}}" style="padding-left: 10px;">Logout</a></li>
       <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
     </ul>
   </div>
@@ -33,7 +33,27 @@
 <!-- featured products -->
 <section id="product1" class="section-p1">
   <div class="pro-container">
-    <div class="pro" onclick="window.location.href='sproduct.html';">
+    {% for product in products %}
+    <a href="sproduct" style="text-decoration:none; color:black">
+      <div class="pro">
+        <img src="../static/imgs/products/f1.jpg" alt="">
+        <div class="des">
+          <span>harry potter</span>
+          <h5>{{ product.name }}</h5>
+          <div class="star">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <h4>${{ product.price }}</h4>
+        </div>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+      </div>
+    </a>
+    {% endfor %}
+    <!--<div class="pro">
       <img src="../static/imgs/products/f1.jpg" alt="">
       <div class="des">
         <span>harry potter</span>
@@ -273,23 +293,7 @@
       </div>
       <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
     </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-  </div>
+  </div>-->
 </section>
 
 <!-- navigation -->
@@ -304,7 +308,7 @@
 <footer class="section-p1">
 
   <div class="cols">
-    <img class="logo" src="../static/imgs/logo.jpg" width="50px" height="55px" alt="">
+    <img class="logo" src="../static/imgs/logo.png" width="50px" height="55px" alt="">
     <h4>Contact</h4>
     <p><strong>Address:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     <p><strong>Phone:</strong> +123456789</p>

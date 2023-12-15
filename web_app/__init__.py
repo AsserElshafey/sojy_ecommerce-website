@@ -13,6 +13,7 @@ def create_app():
 
     from .views import views
     from .auth import auth
+    from .products import product
 
     from . import models
     from .models import User
@@ -21,7 +22,7 @@ def create_app():
         db.create_all()
 
     login_manager = LoginManager()
-    login_manager.login_view = 'view.home'
+    login_manager.login_view = 'views.home'
     login_manager.init_app(app)
 
     @login_manager.user_loader
@@ -30,4 +31,5 @@ def create_app():
 
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
+    app.register_blueprint(product, url_prefix="/")
     return app
