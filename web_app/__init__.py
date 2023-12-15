@@ -14,7 +14,6 @@ def create_app():
     from .views import views
     from .auth import auth
     from .products import product
-
     from .models.user import User
 
     with app.app_context():
