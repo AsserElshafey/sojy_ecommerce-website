@@ -15,8 +15,7 @@ def create_app():
     from .auth import auth
     from .products import product
 
-    from . import models
-    from .models import User
+    from .models.user import User
 
     with app.app_context():
         db.create_all()

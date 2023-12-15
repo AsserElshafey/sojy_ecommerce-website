@@ -1,5 +1,5 @@
 from flask import Blueprint, request, render_template
-from .models import Product
+from .models.product import Product
 from . import db
 
 

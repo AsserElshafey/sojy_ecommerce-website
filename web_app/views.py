@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request
-from .models import Product
+from .models.product import Product
 
 views = Blueprint('views', __name__)
 
