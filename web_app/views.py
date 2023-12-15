@@ -28,3 +28,8 @@ def contact_us():
 @views.route("/sproduct", strict_slashes=False)
 def sproduct():
     return render_template('sproduct.html')
+
+
+@views.route("/cart", strict_slashes=False)
+def cart():
+    return render_template('cart.html')

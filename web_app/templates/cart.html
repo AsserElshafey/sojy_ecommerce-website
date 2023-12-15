@@ -1,177 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
-    <title>Sojy</title>
-  </head>
-  <body>
-    <!-- navbar -->
-    <section id="header">
-      <a href="#"
-        ><img
-          src="imgs/logo.jpg"
-          class="logo"
-          width="50px"
-          height="55px"
-          alt=""
-      /></a>
-      <div>
-        <ul id="navbar">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="shop.html">Shop</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li id="lg-bag">
-            <a class="active" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-          </li>
-          <li><a href="login.html" style="padding-left: 10px">Log In</a></li>
-          <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
-        </ul>
-      </div>
-      <div id="mobile">
-        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
-        <i id="bar" class="fas fa-outdent"></i>
-      </div>
-    </section>
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock %}
 
-    <!-- carousel slider -->
-    <section id="page-header" class="cart-header">
-      <h2>#CART</h2>
-    </section>
+{% block content %}
+<!-- navbar -->
+<section id="header">
+  <a href="#"><img src="../static/imgs/logo.jpg" class="logo" width="50px" height="55px" alt="" /></a>
+  <div>
+    <ul id="navbar">
+      <li><a href="{{url_for('views.home')}}">Home</a></li>
+      <li><a href="{{ url_for('views.shop')}}">Shop</a></li>
+      <li><a href="{{ url_for('views.about')}}">About</a></li>
+      <li><a href="{{ url_for('views.contact_us')}}">Contact Us</a></li>
+      <li id="lg-bag">
+        <a class="active" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+      </li>
+      <li><a href="{{ url_for('auth.login')}}" style="padding-left: 10px">Login</a></li>
+      <li><a href="{{ url_for('auth.logout')}}" style="padding-left: 10px;">Logout</a></li>
 
-    <!-- main content -->
-    <section id="cart" class="section-p1">
-        <table width="100%">
-            <thead>
-                <tr>
-                    <td>Remove</td>
-                    <td>Image</td>
-                    <td>Product</td>
-                    <td>Price</td>
-                    <td>Quantity</td>
-                    <td>Subtotal</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href=""><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="imgs/products/f1.jpg" alt=""></td>
-                    <td>harry potter: And The Half-Blood Prince</td>
-                    <td>$20</td>
-                    <td><input type="number" value="1" min="1"></td>
-                    <td>$20</td>
-                </tr>
-                <tr>
-                    <td><a href=""><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="imgs/products/f1.jpg" alt=""></td>
-                    <td>harry potter: And The Half-Blood Prince</td>
-                    <td>$20</td>
-                    <td><input type="number" value="1" min="1"></td>
-                    <td>$20</td>
-                </tr>
-                <tr>
-                    <td><a href=""><i class="far fa-times-circle"></i></a></td>
-                    <td><img src="imgs/products/f1.jpg" alt=""></td>
-                    <td>harry potter: And The Half-Blood Prince</td>
-                    <td>$20</td>
-                    <td><input type="number" value="1" min="1"></td>
-                    <td>$20</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+      <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
+    </ul>
+  </div>
+  <div id="mobile">
+    <a href="{{ url_for('views.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a>
+    <i id="bar" class="fas fa-outdent"></i>
+  </div>
+</section>
 
-    <!-- total -->
-    <section id="cart-add" class="section-p1">
-        <div id="coupon">
-            <h3>Apply Coupon</h3>
-            <div>
-              <input type="text" placeholder="Enter your coupon">
-              <button class="normal">Apply</button>
-            </div>
-        </div>
-        <div id="subtotal">
-          <h3>Cart Totals</h3>
-          <table>
-            <tr>
-              <td>Cart Subtotal</td>
-              <td>$60</td>
-            </tr>
-            <tr>
-              <td>shipping</td>
-              <td>Free</td>
-            </tr>
-            <tr>
-              <td><strong>Total</strong></td>
-              <td><strong>$60</strong></td>
-            </tr>
-          </table>
-          <button class="normal" onclick="window.location.href='checkout.html';">Proceed to checkout</button>
-        </div>
-    </section>
+<!-- carousel slider -->
+<section id="page-header" class="cart-header">
+  <h2>#CART</h2>
+</section>
 
-    <!-- footer  -->
-    <hr />
-    <footer class="section-p1">
-      <div class="cols">
-        <img
-          class="logo"
-          src="imgs/logo.jpg"
-          width="50px"
-          height="55px"
-          alt=""
-        />
-        <h4>Contact</h4>
-        <p>
-          <strong>Address:</strong> Lorem ipsum dolor sit amet consectetur
-          adipisicing elit.
-        </p>
-        <p><strong>Phone:</strong> +123456789</p>
-        <p><strong>Email:</strong> Example@Example.com</p>
-        <div class="follow">
-          <h4>Follow Us</h4>
-          <div class="icon">
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-          </div>
-        </div>
-      </div>
-      <div class="cols">
-        <h4>About</h4>
-        <a href="#">About Us</a>
-        <a href="#">Delivery Information</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Contact Us</a>
-      </div>
-      <div class="cols">
-        <h4>My Account</h4>
-        <a href="#">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My Order</a>
-        <a href="#">Help</a>
-      </div>
-      <div class="cols payment">
-        <h4>Payment methodes</h4>
-        <p>Secured Payment Gateways</p>
-        <img src="imgs/payment.png" height="50px" alt="" />
-      </div>
+<!-- main content -->
+<section id="cart" class="section-p1">
+  <table width="100%">
+    <thead>
+      <tr>
+        <td>Remove</td>
+        <td>Image</td>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Quantity</td>
+        <td>Subtotal</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href=""><i class="far fa-times-circle"></i></a></td>
+        <td><img src="../static/imgs/products/f1.jpg" alt=""></td>
+        <td>harry potter: And The Half-Blood Prince</td>
+        <td>$20</td>
+        <td><input type="number" value="1" min="1"></td>
+        <td>$20</td>
+      </tr>
+      <tr>
+        <td><a href=""><i class="far fa-times-circle"></i></a></td>
+        <td><img src="../static/imgs/products/f1.jpg" alt=""></td>
+        <td>harry potter: And The Half-Blood Prince</td>
+        <td>$20</td>
+        <td><input type="number" value="1" min="1"></td>
+        <td>$20</td>
+      </tr>
+      <tr>
+        <td><a href=""><i class="far fa-times-circle"></i></a></td>
+        <td><img src="../static/imgs/products/f1.jpg" alt=""></td>
+        <td>harry potter: And The Half-Blood Prince</td>
+        <td>$20</td>
+        <td><input type="number" value="1" min="1"></td>
+        <td>$20</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
 
-      <div class="copyright">
-        <p>&copy; 2023, All rights reserved</p>
-      </div>
-    </footer>
+<!-- total -->
+<section id="cart-add" class="section-p1">
+  <div id="coupon">
+    <h3>Apply Coupon</h3>
+    <div>
+      <input type="text" placeholder="Enter your coupon">
+      <button class="normal">Apply</button>
+    </div>
+  </div>
+  <div id="subtotal">
+    <h3>Cart Totals</h3>
+    <table>
+      <tr>
+        <td>Cart Subtotal</td>
+        <td>$60</td>
+      </tr>
+      <tr>
+        <td>shipping</td>
+        <td>Free</td>
+      </tr>
+      <tr>
+        <td><strong>Total</strong></td>
+        <td><strong>$60</strong></td>
+      </tr>
+    </table>
+    <button class="normal" onclick="window.location.href='/checkout';">Proceed to checkout</button>
+  </div>
+</section>
 
-    <script src="js/script.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
-  </body>
-</html>
+<!-- footer  -->
+<hr />
+<footer class="section-p1">
+  <div class="cols">
+    <img class="logo" src="../static/imgs/logo.jpg" width="50px" height="55px" alt="" />
+    <h4>Contact</h4>
+    <p>
+      <strong>Address:</strong> Lorem ipsum dolor sit amet consectetur
+      adipisicing elit.
+    </p>
+    <p><strong>Phone:</strong> +123456789</p>
+    <p><strong>Email:</strong> Example@Example.com</p>
+    <div class="follow">
+      <h4>Follow Us</h4>
+      <div class="icon">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div>
+  </div>
+  <div class="cols">
+    <h4>About</h4>
+    <a href="#">About Us</a>
+    <a href="#">Delivery Information</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms & Conditions</a>
+    <a href="#">Contact Us</a>
+  </div>
+  <div class="cols">
+    <h4>My Account</h4>
+    <a href="#">Sign In</a>
+    <a href="#">View Cart</a>
+    <a href="#">My Wishlist</a>
+    <a href="#">Track My Order</a>
+    <a href="#">Help</a>
+  </div>
+  <div class="cols payment">
+    <h4>Payment methodes</h4>
+    <p>Secured Payment Gateways</p>
+    <img src="../static/imgs/payment.png" height="50px" alt="" />
+  </div>
+
+  <div class="copyright">
+    <p>&copy; 2023, All rights reserved</p>
+  </div>
+</footer>
+
+<script src="../static/js/script.js"></script>
+<script src="../static/bootstrap/js/bootstrap.js"></script>
+{% endblock %}
