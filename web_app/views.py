@@ -33,3 +33,8 @@ def sproduct():
 @views.route("/cart", strict_slashes=False)
 def cart():
     return render_template('cart.html')
+
+
+@views.route("/checkout", strict_slashes=False)
+def checkout():
+    return render_template('checkout.html')
