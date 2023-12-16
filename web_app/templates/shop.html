@@ -34,7 +34,7 @@
 <section id="product1" class="section-p1">
   <div class="pro-container">
     {% for product in products %}
-    <a href="{{ url_for('views.sproduct')}}" style="text-decoration:none; color:black">
+    <a href="{{ url_for('views.sproduct', id=product.id)}}" style="text-decoration:none; color:black">
       <div class="pro">
         <img src="../static/images_db/{{ product.image }}" alt="">
         <div class="des">

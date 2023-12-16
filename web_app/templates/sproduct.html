@@ -13,18 +13,19 @@
       <li><a href=" {{url_for('views.about')}}">About</a></li>
       <li><a href="{{url_for('views.contact_us')}}">Contact Us</a></li>
       <li id="lg-bag">
-        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="{{ url_for('views.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a>
       </li>
       <li><a href="{{url_for('auth.login')}}" style="padding-left: 10px">Log In</a></li>
       <a href="#" id="close"><i class="fa-solid fa-x"></i></a>
     </ul>
   </div>
   <div id="mobile">
-    <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a href="{{ url_for('views.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a>
     <i id="bar" class="fas fa-outdent"></i>
   </div>
 </section>
 
+<!--Multiple images option
 <section id="prodetails" class="section-p1">
   <div class="single-pro-image">
     <img src="../static/imgs/products/f1.jpg" width="100%" id="mainimg" alt="" />
@@ -43,25 +44,25 @@
       </div>
     </div>
   </div>
+-->
+<section id="prodetails" class="section-p1">
+  <div class="single-pro-image">
+    <img src="../static/images_db/{{ sproduct.image }}" width="100%" id="mainimg" alt="" />
+  </div>
   <div class="single-pro-details">
-    <h6>Books/ novels</h6>
-    <h4>harry potter: And The Half-Blood Prince</h4>
-    <h2>$20</h2>
-    <select>
+    <h6>Books/ Novels</h6>
+    <h4>{{ sproduct.name }}</h4>
+    <h2>{{ sproduct.price }} L.E</h2>
+    <!--<select>
       <option>chapter 1</option>
       <option>chapter 2</option>
       <option>chapter 3</option>
       <option>chapter 4</option>
-    </select>
-    <input type="number" value="1" min="1" />
+    </select>-->
+    <input type="number" value="1" min="1" max="{{ sproduct.quantity }}" />
     <button class="normal">Add To Cart</button>
     <h4>Product Details</h4>
-    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus
-      esse illo iusto facere facilis, veritatis nihil. Perspiciatis, minus
-      dolorem voluptatum quae adipisci beatae iusto recusandae cupiditate
-      consectetur esse est quibusdam odit nemo, molestias pariatur autem.
-      Laudantium error, distinctio, quos temporibus ratione minus incidunt
-      nam vero reiciendis ad, molestias numquam in!</span>
+    <span>{{ sproduct.details }}</span>
   </div>
 </section>
 
@@ -69,71 +70,21 @@
 <section id="product1" class="section-p1">
   <h2>Featured Products</h2>
   <p>check some of our latest products</p>
+
   <div class="pro-container">
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+    {% for product in featured %}
+    <a href="{{ url_for('views.sproduct', id=product.id)}}" style="text-decoration:none; color:black">
+      <div class="pro">
+        <img src="../static/images_db/{{ product.image }}" alt="">
+        <div class="des">
+          <span>Books</span>
+          <h5>{{ product.name }}</h5>
+          <h4>{{ product.price }} L.E</h4>
         </div>
-        <h4>$20</h4>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
       </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
+    </a>
+    {% endfor %}
   </div>
 </section>
 

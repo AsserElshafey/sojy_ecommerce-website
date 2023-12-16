@@ -25,9 +25,11 @@ def contact_us():
     return render_template('contact.html')
 
 
-@views.route("/sproduct", strict_slashes=False)
-def sproduct():
-    return render_template('sproduct.html')
+@views.route("/sproduct/<int:id>", strict_slashes=False)
+def sproduct(id):
+    sproduct = Product.query.get(int(id))
+    featured_products = Product.query.filter_by(featured=1)
+    return render_template('sproduct.html', sproduct=sproduct, featured=featured_products)
 
 
 @views.route("/cart", strict_slashes=False)
