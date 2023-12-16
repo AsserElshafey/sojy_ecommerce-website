@@ -1,7 +1,8 @@
-from flask import Blueprint, request, render_template
+from flask import Blueprint, request, render_template, url_for, Response, redirect
+from werkzeug.utils import secure_filename
 from .models.product import Product
+import os
 from . import db
-
 
 product = Blueprint('product', __name__)
 
@@ -14,22 +15,31 @@ def admin():
 
 @product.route('/add_product', strict_slashes=False, methods=['POST'])
 def add_product():
+
     name = request.form.get('product_name')
     quantity = request.form.get('product_quantity')
     price = request.form.get('product_price')
     details = request.form.get('product_details')
+    #### IMAGE #####
+    pic = request.files['pic']
+    if not pic:
+        return "No pic uploaded", 400
+    filename = secure_filename(pic.filename)
+    from . import create_app
+    app = create_app()
+    pic.save(os.path.join(app.root_path,
+             app.config['UPLOAD_FOLDER'], filename))
     if request.form.get('featured'):
         featured = 1
     else:
         featured = 0
     print(featured)
     new_product = Product(name=name, quantity=quantity,
-                          price=price, details=details, featured=featured)
+                          price=price, details=details, featured=featured, image=filename)
     db.session.add(new_product)
     db.session.commit()
     print("New product added")
-    products = Product.query.all()
-    return render_template('admin.html', products=products)
+    return redirect('/admin')
 
 
 @product.route('/update_product/<int:id>', strict_slashes=False, methods=['POST'])

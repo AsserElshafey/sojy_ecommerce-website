@@ -15,8 +15,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 sidebar">
-                <a href="#" class="active"><i class="fas fa-boxes"></i> Products</a>
-                <a href="#"><i class="fas fa-shopping-cart"></i> Orders</a>
+                <a href="admin_products" class="active"><i class="fas fa-boxes"></i> Products</a>
+                <a href="admin_orders"><i class="fas fa-shopping-cart"></i> Orders</a>
             </div>
             <div class="col-md-10 main-content">
                 <div class="card">
@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <!-- Add Product Form -->
-                                    <form method="POST" action="/add_product">
+                                    <form method="POST" action="/add_product" enctype="multipart/form-data">
                                         <div class="mb-3">
                                             <label for="productName" class="form-label">Product Name</label>
                                             <input type="text" class="form-control" id="product_name"
@@ -61,8 +61,13 @@
                                             <input type="text" class="form-control" id="product_price"
                                                 name="product_price" placeholder="Enter price" required>
                                         </div>
+                                        <div class="mb-3">
+                                            <input type="file" class="form-control" id="pic" name="pic">
+                                            <input type="submit" class="form-control" placeholder="Upload a file">
+                                        </div>
                                         <div class="mb-3 form-check">
-                                            <input type="checkbox" class="form-check-input" id="1" name="1">
+                                            <input type="checkbox" class="form-check-input" id="featured"
+                                                name="featured">
                                             <label class="form-check-label" for="featured">Featured</label>
                                         </div>
                                         <div class="modal-footer">

@@ -6,5 +6,6 @@ class Product(db.Model):
     name = db.Column(db.String(150), nullable=False)
     quantity = db.Column(db.Integer)
     price = db.Column(db.Integer, nullable=False)
-    details = db.Column(db.String(512))
+    details = db.Column(db.Text)
     featured = db.Column(db.Integer)
+    image = db.Column(db.String(50))

@@ -9,6 +9,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'hiddenleaf'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:root@localhost/sojy'
+    app.config['UPLOAD_FOLDER'] = 'static/images_db'
     db.init_app(app)
 
     from .views import views
