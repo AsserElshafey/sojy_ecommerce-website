@@ -12,7 +12,7 @@
       <li><a href="{{ url_for('views.about')}}">About</a></li>
       <li><a href="{{ url_for('views.contact_us')}}">Contact Us</a></li>
       <li id="lg-bag">
-        <a class="active" href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a class="active" href="{{ url_for('views.cart')}}"><i class="fa-solid fa-cart-shopping"></i></a>
       </li>
       <li><a href="{{ url_for('auth.login')}}" style="padding-left: 10px">Login</a></li>
       <li><a href="{{ url_for('auth.logout')}}" style="padding-left: 10px;">Logout</a></li>

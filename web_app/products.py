@@ -15,7 +15,6 @@ def admin():
 
 @product.route('/add_product', strict_slashes=False, methods=['POST'])
 def add_product():
-
     name = request.form.get('product_name')
     quantity = request.form.get('product_quantity')
     price = request.form.get('product_price')
