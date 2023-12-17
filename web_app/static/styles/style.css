@@ -54,6 +54,17 @@ button.normal {
     transition: 0.4s ease;
 }
 
+.no-caret {
+
+    padding-top: 10px !important;
+}
+
+
+.no-caret::after {
+
+    display: none !important;
+}
+
 button.white {
     font-size: 13px;
     font-weight: 600;
