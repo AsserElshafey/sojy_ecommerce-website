@@ -1,7 +1,8 @@
-from flask import Blueprint, request, render_template, url_for, Response, redirect
+from flask import Blueprint, request, render_template, url_for, redirect, session
 from werkzeug.utils import secure_filename
 from .models.product import Product
 from .models.cart import Cart
+from .models.user import User
 from flask_login import current_user
 import os
 from . import db
@@ -75,10 +76,25 @@ def delete_product(id):
 
 @product.route('/add_to_cart/<int:id>', strict_slashes=False, methods=['POST'])
 def add_to_cart(id):
+
     product = Product.query.get(int(id))
-    cart = Cart.query.get(1)
+    if session.get('id'):
+        user = User.query.get(session['id'])
+        cart = Cart.query.filter_by(user_id=user.id).first()
+        if not cart:
+            cart = Cart(user_id=user.id)
+    else:
+        user = User()
+        db.session.add(user)
+        db.session.commit()
+        session['id'] = user.id
+        cart = Cart.query.filter_by(user_id=user.id).first()
+        if not cart:
+            cart = Cart(user_id=user.id)
+
     product.cart = cart
-    db.session.add_all(cart, product)
+    db.session.add(cart)
     db.session.add(product)
     db.session.commit()
+    print(cart)
     return render_template('cart.html', cart=cart)

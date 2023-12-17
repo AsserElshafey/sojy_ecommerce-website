@@ -14,11 +14,25 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2 sidebar" style="height: auto;">
-                <a href="admin_products" class="active"><i class="fas fa-boxes"></i> Products</a>
-                <a href="admin_orders"><i class="fas fa-shopping-cart"></i> Orders</a>
-            </div>
-            <div class="col-md-10 main-content">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <nav class="navbar navbar-dark bg-dark">
+                    <span class="navbar-brand mb-0 h1" style="padding-left: 20px;">Admin</span>
+                </nav>
+                <div id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Orders</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="col-md-12 main-content">
                 <div class="card">
                     <h3>Products</h3>
                     <p>
