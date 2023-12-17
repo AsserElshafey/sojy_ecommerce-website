@@ -44,6 +44,17 @@
       </tr>
     </thead>
     <tbody>
+      {% for product in cart.product %}
+      <tr>
+        <td><a href=""><i class="far fa-times-circle"></i></a></td>
+        <td><img src="../static/images_db/{{product.image}}" alt=""></td>
+        <td>{{product.name}}</td>
+        <td>{{ product.price }} L.E</td>
+        <td><input type="number" value="1" min="1" max="{{ product.quantity }}"></td>
+        <td> {{ product.price * 2 }} L.E</td>
+      </tr>
+      {% endfor %}
+      <!--
       <tr>
         <td><a href=""><i class="far fa-times-circle"></i></a></td>
         <td><img src="../static/imgs/products/f1.jpg" alt=""></td>
@@ -60,14 +71,7 @@
         <td><input type="number" value="1" min="1"></td>
         <td>$20</td>
       </tr>
-      <tr>
-        <td><a href=""><i class="far fa-times-circle"></i></a></td>
-        <td><img src="../static/imgs/products/f1.jpg" alt=""></td>
-        <td>harry potter: And The Half-Blood Prince</td>
-        <td>$20</td>
-        <td><input type="number" value="1" min="1"></td>
-        <td>$20</td>
-      </tr>
+      -->
     </tbody>
   </table>
 </section>

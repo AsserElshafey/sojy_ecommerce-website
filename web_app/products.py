@@ -1,6 +1,8 @@
 from flask import Blueprint, request, render_template, url_for, Response, redirect
 from werkzeug.utils import secure_filename
 from .models.product import Product
+from .models.cart import Cart
+from flask_login import current_user
 import os
 from . import db
 
@@ -67,3 +69,16 @@ def delete_product(id):
     print("product deleted")
     products = Product.query.all()
     return render_template('admin.html', products=products)
+
+#### Cart ######
+
+
+@product.route('/add_to_cart/<int:id>', strict_slashes=False, methods=['POST'])
+def add_to_cart(id):
+    product = Product.query.get(int(id))
+    cart = Cart.query.get(1)
+    product.cart = cart
+    db.session.add_all(cart, product)
+    db.session.add(product)
+    db.session.commit()
+    return render_template('cart.html', cart=cart)

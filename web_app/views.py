@@ -6,7 +6,8 @@ views = Blueprint('views', __name__)
 
 @views.route("/", strict_slashes=False)
 def home():
-    return render_template('index.html')
+    featured_products = Product.query.filter_by(featured=1)
+    return render_template('index.html', featured=featured_products)
 
 
 @views.route("/shop", strict_slashes=False)

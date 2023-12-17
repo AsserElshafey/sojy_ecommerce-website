@@ -9,3 +9,5 @@ class Product(db.Model):
     details = db.Column(db.Text)
     featured = db.Column(db.Integer)
     image = db.Column(db.String(50))
+    cart_id = db.Column(db.Integer, db.ForeignKey('cart.id'))
+    cart = db.relationship('Cart', back_populates='product')

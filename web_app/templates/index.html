@@ -70,355 +70,237 @@
   <h2>Featured Products</h2>
   <p>check some of our latest products</p>
   <div class="pro-container">
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
+    {% for product in featured %}
+    <a href="{{ url_for('views.sproduct', id=product.id)}}" style="text-decoration:none; color:black">
+      <div class="pro">
+        <img src="../static/images_db/{{ product.image }}" alt="">
+        <div class="des">
+          <span>harry potter</span>
+          <h5>{{ product.name }}</h5>
+          <h4>{{ product.price }} L.E</h4>
         </div>
-        <h4>$20</h4>
+        <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
       </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-  </div>
-</section>
+    </a>
+    {% endfor %}
+    <!-- banner -->
+    <section id="banner" class="section-m1">
+      <h4>Big sale</h4>
+      <h2>Up to <span>50% off</span> - On All Books</h2>
+      <button class="normal">Explore more</button>
+    </section>
 
-<!-- banner -->
-<section id="banner" class="section-m1">
-  <h4>Big sale</h4>
-  <h2>Up to <span>50% off</span> - On All Books</h2>
-  <button class="normal">Explore more</button>
-</section>
+    <!-- Heat -->
+    <section id="product1" class="section-p1">
+      <h2>Heat</h2>
+      <p>check out some of our most sold items</p>
+      <div class="pro-container">
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="../static/imgs/products/f1.jpg" alt="">
+          <div class="des">
+            <span>harry potter</span>
+            <h5>harry potter: And The Half-Blood Prince</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$20</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+      </div>
+    </section>
 
-<!-- Heat -->
-<section id="product1" class="section-p1">
-  <h2>Heat</h2>
-  <p>check out some of our most sold items</p>
-  <div class="pro-container">
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
+    <!-- banners & text banners -->
+    <section id="sm-banner" class="section-p1">
+      <div class="banner-box">
+        <h4>Latest Arrivales</h4>
+        <h2>Harry Potter Full Collection</h2>
+        <span>Get The Full Collection NOW With an Amazimg Deal</span>
+        <button class="white">Learn More</button>
       </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
+      <div class="banner-box banner-box2">
+        <h4>Latest Arrivales</h4>
+        <h2>Naruto & Naruto shippuden Manga</h2>
+        <span>Get The Full Collection NOW With an Amazimg Deal</span>
+        <button class="white">Learn More</button>
       </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-    <div class="pro">
-      <img src="../static/imgs/products/f1.jpg" alt="">
-      <div class="des">
-        <span>harry potter</span>
-        <h5>harry potter: And The Half-Blood Prince</h5>
-        <div class="star">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-        <h4>$20</h4>
-      </div>
-      <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- banners & text banners -->
-<section id="sm-banner" class="section-p1">
-  <div class="banner-box">
-    <h4>Latest Arrivales</h4>
-    <h2>Harry Potter Full Collection</h2>
-    <span>Get The Full Collection NOW With an Amazimg Deal</span>
-    <button class="white">Learn More</button>
-  </div>
-  <div class="banner-box banner-box2">
-    <h4>Latest Arrivales</h4>
-    <h2>Naruto & Naruto shippuden Manga</h2>
-    <span>Get The Full Collection NOW With an Amazimg Deal</span>
-    <button class="white">Learn More</button>
-  </div>
-</section>
-
-<!-- text banners -->
-<section id="banner3">
-  <div class="banner-box">
-    <h2>Office Equipment</h2>
-    <h3>Pens & Papper etc.</h3>
-  </div>
-  <div class="banner-box banner-box2">
-    <h2>School Supplies</h2>
-    <h3>Pencils & Erasers etc.</h3>
-  </div>
-  <div class="banner-box banner-box3">
-    <h2>Perfumes</h2>
-    <h3>Men & women's Perfume</h3>
-  </div>
-</section>
-
-<!-- footer  -->
-<hr>
-<footer class="section-p1">
-
-  <div class="cols">
-    <img class="logo" src="../static/imgs/logo.png" width="50px" height="55px" alt="">
-    <h4>Contact</h4>
-    <p><strong>Address:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <p><strong>Phone:</strong> +123456789</p>
-    <p><strong>Email:</strong> Example@Example.com</p>
-    <div class="follow">
-      <h4>Follow Us</h4>
-      <div class="icon">
-        <i class="fab fa-facebook-f"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-instagram"></i>
+    <!-- text banners -->
+    <section id="banner3">
+      <div class="banner-box">
+        <h2>Office Equipment</h2>
+        <h3>Pens & Papper etc.</h3>
       </div>
-    </div>
-  </div>
-  <div class="cols">
-    <h4>About</h4>
-    <a href="#">About Us</a>
-    <a href="#">Delivery Information</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms & Conditions</a>
-    <a href="#">Contact Us</a>
-  </div>
-  <div class="cols">
-    <h4>My Account</h4>
-    <a href="#">Sign In</a>
-    <a href="#">View Cart</a>
-    <a href="#">My Wishlist</a>
-    <a href="#">Track My Order</a>
-    <a href="#">Help</a>
-  </div>
-  <div class="cols payment">
-    <h4>Payment methodes</h4>
-    <p>Secured Payment Gateways</p>
-    <img src="../static/imgs/payment.png" height="50px" alt="">
-  </div>
+      <div class="banner-box banner-box2">
+        <h2>School Supplies</h2>
+        <h3>Pencils & Erasers etc.</h3>
+      </div>
+      <div class="banner-box banner-box3">
+        <h2>Perfumes</h2>
+        <h3>Men & women's Perfume</h3>
+      </div>
+    </section>
 
-  <div class="copyright">
-    <p>&copy; 2023, All rights reserved</p>
-  </div>
-</footer>
-{% endblock %}
+    <!-- footer  -->
+    <hr>
+    <footer class="section-p1">
+
+      <div class="cols">
+        <img class="logo" src="../static/imgs/logo.png" width="50px" height="55px" alt="">
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p><strong>Phone:</strong> +123456789</p>
+        <p><strong>Email:</strong> Example@Example.com</p>
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+          </div>
+        </div>
+      </div>
+      <div class="cols">
+        <h4>About</h4>
+        <a href="#">About Us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="cols">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="cols payment">
+        <h4>Payment methodes</h4>
+        <p>Secured Payment Gateways</p>
+        <img src="../static/imgs/payment.png" height="50px" alt="">
+      </div>
+
+      <div class="copyright">
+        <p>&copy; 2023, All rights reserved</p>
+      </div>
+    </footer>
+    {% endblock %}

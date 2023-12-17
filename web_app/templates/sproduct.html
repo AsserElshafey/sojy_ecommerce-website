@@ -60,7 +60,10 @@
       <option>chapter 4</option>
     </select>-->
     <input type="number" value="1" min="1" max="{{ sproduct.quantity }}" />
-    <button class="normal">Add To Cart</button>
+    <form method="POST" action="{{ url_for('product.add_to_cart', id=sproduct.id) }}">
+      <button class="normal" type="submit" action="{{ url_for('product.add_to_cart', id=sproduct.id) }}">Add To
+        Cart</button>
+    </form>
     <h4>Product Details</h4>
     <span>{{ sproduct.details }}</span>
   </div>
