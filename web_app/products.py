@@ -71,27 +71,30 @@ def delete_product(id):
     products = Product.query.all()
     return render_template('admin.html', products=products)
 
+
 #### Cart ######
 
 
 @product.route('/add_to_cart/<int:id>', strict_slashes=False, methods=['POST'])
 def add_to_cart(id):
-
     product = Product.query.get(int(id))
-    if session.get('id'):
-        user = User.query.get(session['id'])
-        cart = Cart.query.filter_by(user_id=user.id).first()
-        if not cart:
-            cart = Cart(user_id=user.id)
+    if current_user.get_id() is None:
+        if session.get('id'):
+            user = User.query.get(session['id'])
+            cart = Cart.query.filter_by(user_id=user.id).first()
+            if not cart:
+                cart = Cart(user_id=user.id)
+        else:
+            user = User()
+            db.session.add(user)
+            db.session.commit()
+            session['id'] = user.id
+            cart = Cart.query.filter_by(user_id=user.id).first()
+            if not cart:
+                cart = Cart(user_id=user.id)
     else:
-        user = User()
-        db.session.add(user)
-        db.session.commit()
-        session['id'] = user.id
-        cart = Cart.query.filter_by(user_id=user.id).first()
-        if not cart:
-            cart = Cart(user_id=user.id)
-
+        print(current_user.get_id())
+        cart = Cart.query.filter_by(user_id=int(current_user.get_id())).first()
     product.cart = cart
     db.session.add(cart)
     db.session.add(product)

@@ -153,7 +153,7 @@ body {
 
 #product1 .pro-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding-top: 20px;
     flex-wrap: wrap;
 }
@@ -167,6 +167,7 @@ body {
     cursor: pointer;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     margin: 15px 0;
+    margin-right: 24px;
     transition: 0.2s ease;
     position: relative;
 }
@@ -764,11 +765,11 @@ footer .copyright {
     }
 
     #product1 .pro-container {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     #product1 .pro {
-        margin: 25px;
+        margin: 10px;
     }
 
     #banner {
