@@ -1,6 +1,40 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+.success{
+    position: relative;
+    background-color: green;
+    color: white;
+    padding: 15px;
+    transition: 0.4s ease-in;
+}
+
+.alert{
+    position: relative;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 15px;
+    transition: 0.4s ease-in;
+}
+
+p{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.end{
+    position: absolute;
+    right: 0;
+    top: 30%;
+    padding-right: 35px;
+}
+
+a:hover{
+    color: #ffd000;
 }
 
 .hero{
