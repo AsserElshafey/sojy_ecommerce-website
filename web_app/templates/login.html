@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/styles/login.css">
-    <title>Login</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="../static/styles/login.css" />
+    <title>Sojy</title>
 </head>
 
 <body>
@@ -14,14 +15,24 @@
     {% for category, message in messages %}
     {% if category == 'error' %}
     <script>register</script>
-    <div class="success">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        {{ message }}
+    <div class="alert">
+        <p>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            {{ message }}
+        </p>
+        <p class="end">
+            <a href=""><i class="fa-solid fa-x"></i></a>
+        </p>
     </div>
     {% else %}
-    <div class="alert">
-        {{ message }}
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+    <div class="success">
+        <p>
+            <i class="fa-regular fa-circle-check"></i>
+            {{ message }}
+        </p>
+        <p class="end">
+            <a href=""><i class="fa-solid fa-x"></i></a>
+        </p>
     </div>
     {% endif %}
     {% endfor %}
@@ -31,8 +42,12 @@
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
-                <button type="button" class="toggle-btn" onclick="login()">Log In </button>
-                <button type="button" class="toggle-btn" onclick="register()">Register</button>
+                <button type="button" class="toggle-btn" onclick="login()">
+                    Log In
+                </button>
+                <button type="button" class="toggle-btn" onclick="register()">
+                    Register
+                </button>
             </div>
             <form method="POST" class="input-group" id="login" action="/login">
                 <input type="email" class="input-field" name="email" id="email" placeholder="User email" required>
