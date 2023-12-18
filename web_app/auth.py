@@ -16,15 +16,13 @@ def login():
         user = User.query.filter_by(email=email).first()
         if user:
             if check_password_hash(user.password, password):
-                flash("Login Successful", category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:
                 flash("Your password is incorrect.", category='error')
         else:
-            flash("This user doesn't exist")
-            return redirect("https://www.youtube.com/watch?v=nEf2ML7wkBE", code=302)
-
+            flash("This user doesn't exist", category='error')
+            return redirect(url_for('auth.login'))
     return render_template("login.html")
 
 
@@ -38,18 +36,18 @@ def register():
         user = User.query.filter_by(email=email).first()
 
         if password1 != password2:
-            flash('Passwords mismatch', category='error')
+            flash('Passwords do not match', category='error')
         elif len(password1) < 8:
             flash('Password must be atleast 8 characters', category='error')
         elif user:
-            flash('Dis nigga already exists')
+            flash('This user already exists', category='error')
         else:
             # Create new user
             new_user = User(
                 email=email, password=generate_password_hash(password1, method='pbkdf2:sha256'))
             db.session.add(new_user)
             db.session.commit()
-            flash("Account created!", category='success')
+
             login_user(user, remember=True)
             return redirect(url_for('views.home'))
     return render_template("login.html")
