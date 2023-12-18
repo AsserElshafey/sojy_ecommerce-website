@@ -1,4 +1,4 @@
-# Sojy Local Stationey Store - Online Platform for Stationeries
+# Sojy Local Stationery Store - Online Platform for Stationeries
 ## Overview
 Welcome to Our online platform that empowers local stationeries to display and sell their stationery products. Our collaborative team, consisting of Asser El Shafey and myself, divided responsibilities between us. Asser focused on creating a user-friendly interface, emphasizing mobile and web compatibility, and was reponsible for UI/UX and frontend design. Meanwhile, I delved into the database design section and routing, overseeing the backend development using Flask and MySQL.
 
